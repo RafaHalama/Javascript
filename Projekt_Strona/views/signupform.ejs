@@ -1,0 +1,113 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link href='https://fonts.googleapis.com/css?family=Astloch' rel='stylesheet'>
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+  <script src="js/scripts.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>	
+<script>
+	$(document).ready(function() {
+	var NavY = $('.nav').offset().top;
+	 
+	var stickyNav = function(){
+	var ScrollY = $(window).scrollTop();
+		  
+	if (ScrollY > NavY) { 
+		$('.nav').addClass('sticky');
+	} else {
+		$('.nav').removeClass('sticky'); 
+	}
+	};
+	 
+	stickyNav();
+	 
+	$(window).scroll(function() {
+		stickyNav();
+	});
+	});	
+</script>
+  
+  <div id="contener">
+  
+  <div id="head">
+    <div id="logo"><a href="/index"><img src="photos/logo2.png" width="100%" height="98%"></a></div>
+    <div class="headdiv2">Kowal</div>
+    
+	<div class="headdiv">
+	<img src="photos/basket.png" style="width:90%;height:80%;">
+	Value: <span id="koszt">12</span>
+	</div>
+    <div style="clear: both;"></div>
+  </div>
+  
+  <div class="nav">
+    <ol>
+      <li><a href="#head">Main Page</a></li>
+       <li><a href="#info">Contact</a></li>
+        <li><a href="/signupform">Account</a></li>
+		<li><form action="/changeData" method="GET"><button class="astext" type="submit">Change Data</button></form></li>
+		<li><form class="search-form" action="/search" method="POST"><input type="text" size="10" name="sinfo">
+		<input type="submit" value="Go"></form></li>
+    </ol>
+  </div>
+  
+  <div id="content">
+    <div id="products">Cagetory:
+      <ol>
+        <li><a href="#">Weapons</a>
+          <ul>
+            <li><a href="/get-data-swords">Swords</a></li>
+            <li><a href="/get-data-axes">Axes</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Armor</a>
+          <ul>
+            <li><a href="/get-data-helmets">Helmets</a></li>
+            <li><a href="/get-data-shields">Shields</a></li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+	
+    <div id="template">
+		<div id ="accform">
+		Create account:
+		<form action="/signup" method="POST">
+		Email <input type="email" name="email" required><br>
+		Password <input type="password" name="password" required><br>
+		<input type="submit" value="Create">
+		<input type="submit" value="LogIn" formaction="/login" >
+		</form>
+		</div>
+	</div>
+	
+    <div id="reklama"><img src="photos/reklama.jpg" style="width:100%;height:100%;"></div>
+    <div style="clear: both;"></div>
+    
+  </div>
+  
+  <div id="info">
+	<div class="social"><img src="photos/fblogo.png" style="width:100%;height:100%;"></div>
+	<div class="social"><img src="photos/instalogo.png" style="width:100%;height:100%;"></div>
+	<div class="social"><img src="photos/youtubelogo.png" style="width:100%;height:100%;"></div>
+	<div class="social"></div>
+	<div class="social"></div>
+	<div class="social">Telephone: 997997997<br></br>
+	Adress: Warszawa, Marszalka 5<br></br>
+	E-mail: k@gmail.com</div>
+	<div style="clear: both;"></div>
+  </div>
+  
+</div>
+</body>
+</html>
